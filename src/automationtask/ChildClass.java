@@ -15,37 +15,54 @@ import java.util.Scanner;
  */
 public class ChildClass extends ParentClass
 {
-   
-    public void reverseString(String string)
+    int count=0;
+    int[] fin;
+    List<String> list=new ArrayList<>();
+    List<String> list1=new ArrayList<>();
+    
+    public void countSpaces(String string)
     {
-        
-        System.out.println("Example of overriding\n");
-          
-        int count=0,i=0;
-        Scanner scn1=new Scanner(string);
-       
-        List<String> list=new ArrayList<>();
-        List<String> list1=new ArrayList<>();
-
-        for(i=0;i<string.length();i++)
+       for(int i=0;i<string.length();i++)
         {
           if(string.charAt(i)==' ')
           {
              count++;  
           }  
         }
-
-        for(i=0;i<count+1;i++)
+    }
+    
+    public void addToList(String string)
+    {
+       Scanner scn1=new Scanner(string);
+         
+       for(int i=0;i<count+1;i++)
         {
            list.add(scn1.next());
         }
-        
-        
-        for(i=list.size()-1;i>=0;i--)
+        System.out.println(list);
+    }
+    
+    public void reverse()
+    {
+       for(int i=list.size()-1;i>=0;i--)
         {
            list1.add(list.get(i));
         }
         System.out.println(list1);
+    }
+    
+    @Override
+    public void reverseString(String string)
+    {
+        
+        System.out.println("Example of overriding\n");
+       
+        countSpaces(string);
+
+        addToList(string);
+        
+        reverse();
+        
     }
     
     @Override
@@ -54,12 +71,12 @@ public class ChildClass extends ParentClass
         System.out.println("Example of overriding\n");
          
         int len=a.length+b.length;
-        int[] fin=new int[len];
+        fin=new int[len];
         for(int i=0;i<a.length;i++)
         {
             fin[i]=a[i];
         }
-        int f=0;
+            int f=0;
             for(int j=a.length;j<fin.length;j++)
              {
                  fin[j]=b[f];
@@ -89,5 +106,6 @@ public class ChildClass extends ParentClass
        pc.addArray(a, b, string);
        pc.reverseString(string);
        pc.reverseString(string, a);
+       
     }
 }

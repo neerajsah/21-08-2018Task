@@ -13,21 +13,21 @@ public class ParentClass
 {
     public void reverseString(String string)
     {
-       System.out.println("This method should reverse entered string of ParentClass");
+       System.out.println("This method should reverse entered string of ParentClass\n");
     }
     
     public void addArray(int[] a,int[] b)
     {   
-        System.out.println("This method should add second array into first of ParentClass");
+        System.out.println("This method should add second array into first of ParentClass\n");
     }
     
     public void reverseString(String string,int[] a)
     {
-       System.out.println("This is the example of overloading from reverseString() of ParentClass");
+       System.out.println("This is the example of overloading from reverseString() of ParentClass\n");
     }
     
     public void addArray(int[] a,int[] b,String string)
     {   
-        System.out.println("This is the example of overloading from addArray() of ParentClass");
+        System.out.println("This is the example of overloading from addArray() of ParentClass\n");
     }
 }
